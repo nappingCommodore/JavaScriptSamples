@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="scripts.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</html>
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        box.style.backgroundColor = 'blue';
+    </script>
+    <button id="colorButton" onclick="clickListener()">Click Me</button>
+</body>
+</html>
