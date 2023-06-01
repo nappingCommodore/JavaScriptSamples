@@ -13,11 +13,13 @@
     </style>
 </html>
 <body>
-    <div id="box"></div>
+    <div draggable id="box" ondrag="mouseover()"></div>
     <script>
         var box = document.getElementById('box');
-        box.style.backgroundColor = 'blue';
+        console.log(box);
+        box.style.backgroundColor = 'green';
     </script>
-    <button id="colorButton" onclick="clickListener()">Click Me</button>
+    <button id="colorButton" ondblclick="clickListener()">Click Me</button>
+    <button id="colorButton2">Click Me2</button>
 </body>
 </html>

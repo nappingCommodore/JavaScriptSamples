@@ -1,3 +1,4 @@
 function handleCLick() {
-    console.log("Clicked!")
+    console.log("Clicked!");
+    alert("Hello World!");
 }
