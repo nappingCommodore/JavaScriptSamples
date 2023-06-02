@@ -1,0 +1,5 @@
+This is a log file.
+This file will contain all the messages that are logged by the application.
+This file will be used to debug the application.
+This file will be used to trace the application.
+This file will be used to log the application.
