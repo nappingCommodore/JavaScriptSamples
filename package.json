@@ -1,0 +1,22 @@
+{
+  "name": "javascriptsamples",
+  "version": "1.0.0",
+  "description": "Javascript samples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nappingCommodore/JavascriptSamples.git"
+  },
+  "author": "Nitish Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nappingCommodore/JavascriptSamples/issues"
+  },
+  "homepage": "https://github.com/nappingCommodore/JavascriptSamples#readme",
+  "dependencies": {
+    "xhr2": "^0.2.1"
+  }
+}
