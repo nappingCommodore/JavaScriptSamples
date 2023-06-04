@@ -6,5 +6,6 @@ function resMultiplication(a, b) {
 }
 
 var resVal = resMultiplication(2, 3);
+console.log(resMultiplication(2, 3)())
 console.log(resVal());
 

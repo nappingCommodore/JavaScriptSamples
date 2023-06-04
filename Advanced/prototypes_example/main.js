@@ -7,7 +7,7 @@ function employee(firstName, lastName) {
 console.log(employee.prototype);
 
 // Adding a method to the prototype property of the obj
-employee.prototype.fullName = function () {
+employee.prototype.fullName = function fullName() {
     return this.firstName + " " + this.lastName;
 }
 

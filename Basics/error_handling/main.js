@@ -25,7 +25,7 @@ function divideByZeroError() {
 }
 
 
-// errorHandling();
+errorHandling();
 
 // divideByZeroError();
 

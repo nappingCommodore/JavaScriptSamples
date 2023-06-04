@@ -4,10 +4,10 @@ function readTheFile(){
     return new Promise(function(resolve, reject) {
         fs.readFile('./file.txt', {encoding:'utf8', flag:'r'}, function(err, data) {
             if(err) {
-                //console.log(err);
+                console.log("here error " + err);
                 reject(err);
             } else {
-                //console.log(data);
+                console.log(data);
                 resolve(data);
             }
         });
@@ -26,5 +26,3 @@ readTheFile().then((res) => {
 }).catch((err) => {
     console.log("Error::", err);
 });
-
-
