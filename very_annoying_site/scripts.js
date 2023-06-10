@@ -1,3 +1,5 @@
+"use strict"
+
 function moveButton() {
     var arr = ["You can't click me!", "You can't catch me!", "haha, catch me if you can!"]
     var colorOptions = ["red", "green", "brown", "blue"]
