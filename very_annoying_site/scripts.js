@@ -58,3 +58,10 @@ function clearValuediv4() {
     var input = document.getElementById("input2");
     input.value = "";
 }
+
+
+const foobar = () => ( "foobar1" );
+
+// const foobar1 = () => { return "foobar1" };
+
+console.log(foobar());

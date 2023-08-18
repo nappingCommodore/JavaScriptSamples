@@ -1,7 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Button, Button2 } from './components/Button'; // Multiexport 
+import { Button, Button2, Text } from './components/Button'; // Multiexport 
 import Input from './components/Input'; //Default export
+import CompA from './components/Context'; //Default export
+import NewCompA from './components/PropsChain'; //Default export
 
 function App() {
   var buttonText = "Click ME!";
@@ -27,6 +29,9 @@ function App() {
         <Button children={buttonText} onClick={onClick} width={insideWidth} height={insideHight}/>
         <Button children={buttonText1} onClick={onClick1} width={insideWidth} height={insideHight}/>
         <Button2 children={buttonText1} onClick={onClick1} width={insideWidth} height={insideHight}/>
+        <Text/>
+        <CompA/>
+        <NewCompA/>
       </header>
     </div>
   );
