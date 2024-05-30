@@ -1,15 +1,26 @@
 import React, {useState, useEffect, useRef} from 'react';
 import CustomHook from './CustomHook';
+import styles from './Button.module.css';
+import styles1 from './Button1.module.css';
+
+import "./Button.css"
 
 //{ children, onClick, width, height }
 // THis is a functional component that takes in a prop called children
 
 const Button = (props) => {
-    return (<button onClick={props.onClick} style={{color: "red", backgroundColor: 'green', width: props.width, height: props.height}}>{`Here it is ${props.children}`}</button>);
+    return (<button 
+        // onClick={props.onClick} style={{color: "red", backgroundColor: 'green', width: props.width, height: props.height}}
+        className={styles1.ButtonStyle}
+    >
+        {`Here it is ${props.children}`}</button>);
 };
 
 const Button2 = (props) => (   
-    <button onClick={props.onClick} style={{color: "red", backgroundColor: 'green', width: props.width, height: props.height}}>{`Here it is ${props.children}`}</button>
+    <button onClick={props.onClick} 
+    // style={{color: "red", backgroundColor: 'green', width: props.width, height: props.height}}
+    className={styles.ButtonStyle}
+    >{`Here it is ${props.children}`}</button>
 );
 
 const Text = (props) => {
@@ -25,7 +36,7 @@ const Text = (props) => {
         //     console.log("useEffect cleanup");
         // }
         // inputRef.current = count;
-        inputRef.current.style.backgroundColor = "red";
+        inputRef.current.style.backgroundColor = "blue";
         // setTimeout(() => {
         //     setCount(count + 1);
         // }, 1000);
@@ -39,7 +50,9 @@ const Text = (props) => {
     function handleClick(event) {
         event.preventDefault();
         console.log(event);
-        setCount(count + 1);
+        // count = count + 1;
+        var newCount = count + 1;
+        setCount(newCount);
     }
 
     function handleClickNew(event) {
@@ -54,7 +67,7 @@ const Text = (props) => {
         <>
         {(count>5) ? <div>{data}</div>: null}
         {/* {countVar} */}
-        <button onClick={handleClick}>{`Click me to incraese count`}</button>
+        <button onClick={handleClick}>{`Click me to increase count`}</button>
         <button onClick={handleClickNew}>{`Click me to decrease count`}</button>
         {/* {names.map((name, index) => <div id={index}>{name}</div>)} */}
         {/* {nameVar} */}

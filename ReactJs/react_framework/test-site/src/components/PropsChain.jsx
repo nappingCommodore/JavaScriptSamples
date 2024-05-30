@@ -4,12 +4,13 @@ const CompA = () => {
     const [name, setName] = useState("Alice");
 
     return (
-            <CompB name={name}/>
+            <CompB propsName={name} propsCount={0}/>
     );
 }
 
 const CompB = (props) => {
-    return (<CompC name={props.name}/>);
+    console.log(props.propsCount);
+    return (<CompC name={props.propsName}/>);
 }
 
 const CompC = (props) => {
@@ -22,3 +23,4 @@ const CompD = (props) => {
 }
 
 export default CompA;
+
