@@ -25,5 +25,5 @@ function permute(str) {
   }
   
   // Example usage:
-  permute("Nitish");
+  permute("abc");
   
