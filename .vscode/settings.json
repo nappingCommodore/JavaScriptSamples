@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/Basics/js_html/index.html"
+    "livePreview.defaultPreviewPath": "/Basics/js_html/index.html",
+    "sarif-viewer.connectToGithubCodeScanning": "off"
 }
