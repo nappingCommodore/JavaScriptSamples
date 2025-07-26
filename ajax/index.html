@@ -1,0 +1,28 @@
+<!-- A html page to show example for ajax call, the nodejs server is listening on 4000 and will return a string on GET call-->
+<html>
+  <head> 
+    <title>Ajax Example</title>
+    <script>
+      function fetchData() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:4000/', true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            document.getElementById('response').innerText = xhr.responseText;
+          } else {
+            document.getElementById('response').innerText = 'Error fetching data';
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1" name="div1">
+        <span id="span1" name="span1">This is a <b>header</b></span><br>
+        <span id="span2" name="span2">This is a paragraph.</span>
+    </div>
+    <button onclick="fetchData()">Fetch Data</button>
+    <div id="response"></div>
+  </body>
+</html>
