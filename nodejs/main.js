@@ -5,7 +5,13 @@ const app = express();
 const PORT_EXPRESS = 3000;
 
 // CORS enablement 
-app.use(cors());
+app.use(cors(
+    // {
+    //     origin: 'http://localhost:3000', // Allow requests from this origin
+    //     methods: ['GET', 'POST'], // Allow these HTTP methods
+    //     allowedHeaders: ['Content-Type', 'Authorization'] // Allow these headers
+    // }
+));
 
 app.get('/api', (req, res) => {
     res.json({ message: 'Hello World from Express.js!' });
