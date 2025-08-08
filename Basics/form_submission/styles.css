@@ -1,0 +1,279 @@
+/* Form Submission Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+input.valid {
+    border-color: #27ae60;
+}
+
+input.invalid {
+    border-color: #e74c3c;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group input,
+.radio-group input {
+    width: auto;
+    margin-right: 8px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button[type="reset"] {
+    background-color: #95a5a6;
+}
+
+button[type="reset"]:hover {
+    background-color: #7f8c8d;
+}
+
+button.remove-field {
+    background-color: #e74c3c;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+button.remove-field:hover {
+    background-color: #c0392b;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-line;
+    display: none;
+}
+
+.result.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.result.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.loading {
+    text-align: center;
+    padding: 15px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.progress {
+    margin-top: 15px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress.hidden {
+    display: none;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.dynamic-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.dynamic-field input {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .checkbox-group,
+    .radio-group {
+        flex-direction: column;
+    }
+    
+    .dynamic-field {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .dynamic-field button {
+        margin-top: 5px;
+    }
+}
+
+/* Animation for form validation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.invalid {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Custom checkbox and radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #3498db;
+}
+
+/* File input styling */
+input[type="file"] {
+    padding: 8px;
+}
+
+/* Textarea resize */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Form section hover effect */
+.form-section:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}

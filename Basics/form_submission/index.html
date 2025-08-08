@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Form Submission Examples</h1>
+        
+        <!-- Example 1: Basic Form Submission with Validation -->
+        <section class="form-section">
+            <h2>1. Basic Form with Validation</h2>
+            <form id="basicForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error" id="nameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="emailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                    <span class="error" id="phoneError"></span>
+                </div>
+                
+                <button type="submit">Submit Basic Form</button>
+            </form>
+            <div id="basicResult" class="result"></div>
+        </section>
+
+        <!-- Example 2: Form with Multiple Input Types -->
+        <section class="form-section">
+            <h2>2. Advanced Form with Multiple Input Types</h2>
+            <form id="advancedForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" minlength="3" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" minlength="6" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="18" max="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Birth Date:</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="coding"> Coding</label>
+                        <label><input type="checkbox" name="interests" value="reading"> Reading</label>
+                        <label><input type="checkbox" name="interests" value="sports"> Sports</label>
+                        <label><input type="checkbox" name="interests" value="music"> Music</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Newsletter Subscription:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="newsletter" value="daily"> Daily</label>
+                        <label><input type="radio" name="newsletter" value="weekly"> Weekly</label>
+                        <label><input type="radio" name="newsletter" value="monthly"> Monthly</label>
+                        <label><input type="radio" name="newsletter" value="none"> None</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+                
+                <button type="submit">Submit Advanced Form</button>
+                <button type="reset">Reset Form</button>
+            </form>
+            <div id="advancedResult" class="result"></div>
+        </section>
+
+        <!-- Example 3: AJAX Form Submission -->
+        <section class="form-section">
+            <h2>3. AJAX Form Submission</h2>
+            <form id="ajaxForm">
+                <div class="form-group">
+                    <label for="ajaxName">Name:</label>
+                    <input type="text" id="ajaxName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ajaxEmail">Email:</label>
+                    <input type="email" id="ajaxEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ajaxMessage">Message:</label>
+                    <textarea id="ajaxMessage" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Submit via AJAX</button>
+            </form>
+            <div id="ajaxResult" class="result"></div>
+            <div id="loadingIndicator" class="loading hidden">Submitting...</div>
+        </section>
+
+        <!-- Example 4: File Upload Form -->
+        <section class="form-section">
+            <h2>4. File Upload Form</h2>
+            <form id="fileForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fileName">File Name:</label>
+                    <input type="text" id="fileName" name="fileName">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fileInput">Choose File:</label>
+                    <input type="file" id="fileInput" name="file" accept=".txt,.pdf,.doc,.docx,.jpg,.png">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fileDescription">Description:</label>
+                    <textarea id="fileDescription" name="description" rows="3"></textarea>
+                </div>
+                
+                <button type="submit">Upload File</button>
+            </form>
+            <div id="fileResult" class="result"></div>
+            <div id="fileProgress" class="progress hidden">
+                <div class="progress-bar"></div>
+            </div>
+        </section>
+
+        <!-- Example 5: Dynamic Form -->
+        <section class="form-section">
+            <h2>5. Dynamic Form (Add/Remove Fields)</h2>
+            <form id="dynamicForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" name="projectName" required>
+                </div>
+                
+                <div id="teamMembers">
+                    <label>Team Members:</label>
+                    <div class="dynamic-field">
+                        <input type="text" name="teamMember" placeholder="Member name" required>
+                        <button type="button" class="remove-field">Remove</button>
+                    </div>
+                </div>
+                
+                <button type="button" id="addMember">Add Team Member</button>
+                <button type="submit">Submit Project</button>
+            </form>
+            <div id="dynamicResult" class="result"></div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
