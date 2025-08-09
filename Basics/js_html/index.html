@@ -3,12 +3,15 @@
 <head>
     <title>JS HTML</title>
     <script type="text/javascript">
-        document.write("Hello World!");
+        function handleClickExample() {
+            document.write("Hello World!");
+            console.log("Hello World from console!");
+        }
     </script>
     <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
-    <button onclick="alert('hello World')">Click Me for alert</button>
+    <button onclick="handleClickExample()">Click Me for alert</button>
     <button onclick="handleCLick()">Click Me for console</button>
 </body>
 </html>
