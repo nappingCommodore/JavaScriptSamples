@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Event Examples</h1>
+
+        <!-- Mouse Events Section -->
+        <section class="event-section">
+            <h2>🖱️ Mouse Events</h2>
+            
+            <div class="example-box">
+                <h3>Mouse Click Events</h3>
+                <button id="clickBtn" class="demo-btn">Click Me!</button>
+                <button id="dblClickBtn" class="demo-btn">Double Click Me!</button>
+                <div id="clickResult" class="result"></div>
+            </div>
+
+            <div class="example-box">
+                <h3>Mouse Movement Events</h3>
+                <div id="mouseArea" class="mouse-area">
+                    <p>Move your mouse over this area</p>
+                    <div id="mouseCoords" class="coords"></div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Mouse Button Events</h3>
+                <div id="mouseButtonArea" class="mouse-button-area">
+                    Right-click me or hold mouse button down
+                </div>
+                <div id="mouseButtonResult" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Keyboard Events Section -->
+        <section class="event-section">
+            <h2>⌨️ Keyboard Events</h2>
+            
+            <div class="example-box">
+                <h3>Key Press Events</h3>
+                <input type="text" id="keyInput" placeholder="Type something here..." class="demo-input">
+                <div id="keyResult" class="result"></div>
+            </div>
+
+            <div class="example-box">
+                <h3>Special Key Combinations</h3>
+                <input type="text" id="specialKeyInput" placeholder="Try Ctrl+S, Alt+A, Shift+Enter..." class="demo-input">
+                <div id="specialKeyResult" class="result"></div>
+            </div>
+
+            <div class="example-box">
+                <h3>Key Code Detection</h3>
+                <input type="text" id="keyCodeInput" placeholder="Press any key to see its code" class="demo-input">
+                <div id="keyCodeResult" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Frame Events Section -->
+        <section class="event-section">
+            <h2>🖼️ Frame/Window Events</h2>
+            
+            <div class="example-box">
+                <h3>Window Load and Resize</h3>
+                <p>Open browser console to see load events. Try resizing the window.</p>
+                <div id="windowInfo" class="result"></div>
+                <button id="scrollBtn" class="demo-btn">Scroll to Bottom</button>
+            </div>
+
+            <div class="example-box">
+                <h3>Page Visibility and Focus</h3>
+                <p>Try switching tabs or minimizing the window</p>
+                <div id="visibilityResult" class="result"></div>
+            </div>
+
+            <div class="example-box">
+                <h3>Before Unload Warning</h3>
+                <button id="enableUnloadWarning" class="demo-btn">Enable Page Exit Warning</button>
+                <button id="disableUnloadWarning" class="demo-btn">Disable Warning</button>
+                <div id="unloadResult" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Media Events Section -->
+        <section class="event-section">
+            <h2>🎵 Media Events</h2>
+            
+            <div class="example-box">
+                <h3>Video Events</h3>
+                <video id="demoVideo" width="400" height="225" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="videoResult" class="result"></div>
+                <div class="media-controls">
+                    <button id="playBtn" class="demo-btn">Play</button>
+                    <button id="pauseBtn" class="demo-btn">Pause</button>
+                    <button id="muteBtn" class="demo-btn">Mute/Unmute</button>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                    <label for="volumeSlider">Volume</label>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Audio Events</h3>
+                <audio id="demoAudio" controls>
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="audioResult" class="result"></div>
+                <div class="audio-info">
+                    <div id="audioProgress" class="progress-bar">
+                        <div id="audioProgressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="audioTime" class="time-info">0:00 / 0:00</div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Image Load Events</h3>
+                <div class="image-container">
+                    <img id="demoImage" src="" alt="Demo Image" style="display: none;">
+                    <div id="imageLoader" class="loader">Loading image...</div>
+                </div>
+                <div class="image-controls">
+                    <button id="loadImageBtn" class="demo-btn">Load Random Image</button>
+                    <button id="loadBrokenImageBtn" class="demo-btn">Load Broken Image</button>
+                </div>
+                <div id="imageResult" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Event Log -->
+        <section class="event-section">
+            <h2>📋 Event Log</h2>
+            <div class="log-controls">
+                <button id="clearLogBtn" class="demo-btn">Clear Log</button>
+                <button id="toggleLogBtn" class="demo-btn">Pause/Resume Logging</button>
+            </div>
+            <div id="eventLog" class="event-log"></div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
