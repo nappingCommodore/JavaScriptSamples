@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse & Keyboard Events - JavaScript Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖱️⌨️ Mouse & Keyboard Events</h1>
+            <p>Interactive examples demonstrating mouse and keyboard event handling in JavaScript</p>
+        </header>
+
+        <!-- Mouse Events Section -->
+        <section class="event-section">
+            <h2>🖱️ Mouse Events</h2>
+            
+            <!-- onClick Event -->
+            <div class="example-card">
+                <h3>onClick Event</h3>
+                <p>Triggered when an element is clicked</p>
+                <button id="clickButton" class="demo-button" onclick="handleClick(event)">Click Me!</button>
+                <div class="event-counter">
+                    <span>Clicks: </span>
+                    <span id="clickCount">0</span>
+                </div>
+                <div id="clickResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;button onclick="handleClick(event)"&gt;Click Me!&lt;/button&gt;</code>
+                </div>
+            </div>
+
+            <!-- onDblClick Event -->
+            <div class="example-card">
+                <h3>onDblClick Event</h3>
+                <p>Triggered when an element is double-clicked</p>
+                <div id="doubleClickArea" class="interactive-area" ondblclick="handleDoubleClick(event)">
+                    <span>Double-click this area</span>
+                </div>
+                <div class="event-counter">
+                    <span>Double-clicks: </span>
+                    <span id="dblClickCount">0</span>
+                </div>
+                <div id="dblClickResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;div ondblclick="handleDoubleClick(event)"&gt;Double-click this area&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <!-- onMouseOver Event -->
+            <div class="example-card">
+                <h3>onMouseOver Event</h3>
+                <p>Triggered when the mouse enters an element (includes child elements)</p>
+                <div id="mouseOverContainer" class="hover-container" onmouseover="handleMouseOver(event)">
+                    <div class="parent-area">
+                        Parent Element
+                        <div class="child-area">Child Element</div>
+                    </div>
+                </div>
+                <div class="event-counter">
+                    <span>MouseOver events: </span>
+                    <span id="mouseOverCount">0</span>
+                </div>
+                <div id="mouseOverResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;div onmouseover="handleMouseOver(event)"&gt;Hover me!&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <!-- onMouseMove Event -->
+            <div class="example-card">
+                <h3>onMouseMove Event</h3>
+                <p>Triggered when the mouse moves within an element</p>
+                <div id="mouseMoveArea" class="tracking-area" onmousemove="handleMouseMove(event)">
+                    <div class="coordinates">
+                        <span>X: </span><span id="mouseX">0</span>
+                        <span>Y: </span><span id="mouseY">0</span>
+                    </div>
+                    <div class="mouse-trail"></div>
+                </div>
+                <div class="event-counter">
+                    <span>Move events: </span>
+                    <span id="mouseMoveCount">0</span>
+                </div>
+                <div id="mouseMoveResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;div onmousemove="handleMouseMove(event)"&gt;Track mouse position&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <!-- onMouseEnter and onMouseLeave Events -->
+            <div class="example-card">
+                <h3>onMouseEnter & onMouseLeave Events</h3>
+                <p>Enter/Leave events don't bubble and ignore child elements</p>
+                <div id="enterLeaveContainer" class="enter-leave-container" onmouseenter="handleMouseEnter(event)" onmouseleave="handleMouseLeave(event)">
+                    <div class="main-area">
+                        <span>Main Area</span>
+                        <div class="nested-area">Nested Area</div>
+                    </div>
+                </div>
+                <div class="event-counters">
+                    <div class="counter-item">
+                        <span>Enter events: </span>
+                        <span id="mouseEnterCount">0</span>
+                    </div>
+                    <div class="counter-item">
+                        <span>Leave events: </span>
+                        <span id="mouseLeaveCount">0</span>
+                    </div>
+                </div>
+                <div id="enterLeaveResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;div onmouseenter="handleMouseEnter(event)" onmouseleave="handleMouseLeave(event)"&gt;&lt;/div&gt;</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keyboard Events Section -->
+        <section class="event-section">
+            <h2>⌨️ Keyboard Events</h2>
+            
+            <!-- onKeyDown Event -->
+            <div class="example-card">
+                <h3>onKeyDown Event</h3>
+                <p>Triggered when a key is pressed down (repeats while held)</p>
+                <input type="text" id="keyDownInput" class="demo-input" placeholder="Press and hold any key..." onkeydown="handleKeyDown(event)">
+                <div class="key-info">
+                    <div class="key-detail">
+                        <span>Key: </span>
+                        <span id="keyDownKey" class="key-value">-</span>
+                    </div>
+                    <div class="key-detail">
+                        <span>Code: </span>
+                        <span id="keyDownCode" class="key-value">-</span>
+                    </div>
+                    <div class="key-detail">
+                        <span>KeyCode: </span>
+                        <span id="keyDownKeyCode" class="key-value">-</span>
+                    </div>
+                </div>
+                <div class="event-counter">
+                    <span>KeyDown events: </span>
+                    <span id="keyDownCount">0</span>
+                </div>
+                <div id="keyDownResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;input onkeydown="handleKeyDown(event)" placeholder="Type here..."&gt;</code>
+                </div>
+            </div>
+
+            <!-- onKeyPress Event -->
+            <div class="example-card">
+                <h3>onKeyPress Event (Deprecated)</h3>
+                <p>Triggered for character keys (deprecated - use keydown instead)</p>
+                <input type="text" id="keyPressInput" class="demo-input" placeholder="Type characters (not special keys)..." onkeypress="handleKeyPress(event)">
+                <div class="key-info">
+                    <div class="key-detail">
+                        <span>Character: </span>
+                        <span id="keyPressChar" class="key-value">-</span>
+                    </div>
+                    <div class="key-detail">
+                        <span>CharCode: </span>
+                        <span id="keyPressCharCode" class="key-value">-</span>
+                    </div>
+                </div>
+                <div class="event-counter">
+                    <span>KeyPress events: </span>
+                    <span id="keyPressCount">0</span>
+                </div>
+                <div id="keyPressResult" class="result-display"></div>
+                <div class="warning-note">
+                    ⚠️ Note: keypress is deprecated. Use keydown for better compatibility.
+                </div>
+                <div class="code-snippet">
+                    <code>&lt;input onkeypress="handleKeyPress(event)" placeholder="Type here..."&gt;</code>
+                </div>
+            </div>
+
+            <!-- onKeyUp Event -->
+            <div class="example-card">
+                <h3>onKeyUp Event</h3>
+                <p>Triggered when a key is released</p>
+                <input type="text" id="keyUpInput" class="demo-input" placeholder="Press and release keys..." onkeyup="handleKeyUp(event)">
+                <div class="key-info">
+                    <div class="key-detail">
+                        <span>Last Released Key: </span>
+                        <span id="keyUpKey" class="key-value">-</span>
+                    </div>
+                    <div class="key-detail">
+                        <span>Release Time: </span>
+                        <span id="keyUpTime" class="key-value">-</span>
+                    </div>
+                </div>
+                <div class="event-counter">
+                    <span>KeyUp events: </span>
+                    <span id="keyUpCount">0</span>
+                </div>
+                <div id="keyUpResult" class="result-display"></div>
+                <div class="code-snippet">
+                    <code>&lt;input onkeyup="handleKeyUp(event)" placeholder="Type here..."&gt;</code>
+                </div>
+            </div>
+
+            <!-- Combined Keyboard Demo -->
+            <div class="example-card">
+                <h3>Combined Keyboard Events Demo</h3>
+                <p>See all keyboard events in action with special key combinations</p>
+                <textarea id="combinedKeyInput" class="demo-textarea" 
+                         placeholder="Try typing, special keys (Ctrl, Alt, Shift), arrow keys, function keys..."
+                         onkeydown="handleCombinedKeyDown(event)"
+                         onkeypress="handleCombinedKeyPress(event)"
+                         onkeyup="handleCombinedKeyUp(event)"></textarea>
+                <div class="modifier-keys">
+                    <div class="modifier" id="ctrlModifier">Ctrl</div>
+                    <div class="modifier" id="altModifier">Alt</div>
+                    <div class="modifier" id="shiftModifier">Shift</div>
+                    <div class="modifier" id="metaModifier">Meta</div>
+                </div>
+                <div class="key-sequence" id="keySequence">Key sequence will appear here...</div>
+                <div id="combinedKeyResult" class="result-display"></div>
+                <button id="clearSequence" class="demo-button" onclick="clearKeySequence()">Clear Sequence</button>
+            </div>
+        </section>
+
+        <!-- Advanced Examples Section -->
+        <section class="event-section">
+            <h2>🎯 Advanced Examples</h2>
+            
+            <!-- Event Bubbling Demo -->
+            <div class="example-card">
+                <h3>Event Bubbling & Delegation</h3>
+                <div id="bubblingContainer" class="bubbling-container" onclick="handleBubbling(event, 'container')">
+                    <div class="outer-box" onclick="handleBubbling(event, 'outer')">
+                        Outer Box
+                        <div class="middle-box" onclick="handleBubbling(event, 'middle')">
+                            Middle Box
+                            <div class="inner-box" onclick="handleBubbling(event, 'inner')">Inner Box</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bubblingResult" class="result-display"></div>
+                <button id="toggleBubbling" class="demo-button" onclick="toggleEventBubbling()">Toggle Event Bubbling</button>
+            </div>
+
+            <!-- Keyboard Shortcuts -->
+            <div class="example-card">
+                <h3>Keyboard Shortcuts</h3>
+                <p>Try these combinations on the input below:</p>
+                <input type="text" class="demo-input" placeholder="Focus here and try keyboard shortcuts..." 
+                       onkeydown="handleKeyboardShortcuts(event)">
+                <ul class="shortcuts-list">
+                    <li><kbd>Ctrl</kbd> + <kbd>S</kbd> - Save</li>
+                    <li><kbd>Ctrl</kbd> + <kbd>Z</kbd> - Undo</li>
+                    <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> - Redo</li>
+                    <li><kbd>Alt</kbd> + <kbd>Enter</kbd> - Full screen</li>
+                </ul>
+                <div id="shortcutResult" class="result-display"></div>
+            </div>
+        </section>
+
+        <!-- Event Log -->
+        <section class="event-section">
+            <h2>📋 Event Log</h2>
+            <div class="log-controls">
+                <button id="clearLog" class="demo-button" onclick="clearEventLog()">Clear Log</button>
+                <button id="pauseLog" class="demo-button" onclick="toggleEventLogging()">Pause Logging</button>
+                <label>
+                    <input type="checkbox" id="showTimestamps" checked onchange="toggleTimestamps()"> Show Timestamps
+                </label>
+            </div>
+            <div id="eventLog" class="event-log"></div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
