@@ -24,13 +24,14 @@ function logEvent(message, category = '') {
 }
 
 // ========== MOUSE EVENTS ==========
-
-// Mouse click events
-document.getElementById('clickBtn').addEventListener('click', function(e) {
+function click(e) {
+    console.log(e);
     const result = document.getElementById('clickResult');
     result.innerHTML = `Single clicked! Button: ${e.button}, Coordinates: (${e.clientX}, ${e.clientY})`;
     logEvent(`Mouse clicked at (${e.clientX}, ${e.clientY})`, 'mouse');
-});
+}
+// Mouse click events
+document.getElementById('clickBtn').addEventListener('click', click);
 
 document.getElementById('dblClickBtn').addEventListener('dblclick', function(e) {
     const result = document.getElementById('clickResult');
@@ -43,6 +44,7 @@ const mouseArea = document.getElementById('mouseArea');
 const mouseCoords = document.getElementById('mouseCoords');
 
 mouseArea.addEventListener('mousemove', function(e) {
+    console.log(mouseArea);
     const rect = mouseArea.getBoundingClientRect();
     const x = Math.round(e.clientX - rect.left);
     const y = Math.round(e.clientY - rect.top);

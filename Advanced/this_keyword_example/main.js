@@ -1,9 +1,21 @@
 // Example for global scoped this
 var name = "ABCDEF";
 
-function thisTest() {
-    console.log("The name is : " + this.name);
+var jsonObj = {
+    name: "ABCD",
+    thisTestFun: function() {
+        console.log("The name is object: " + this.name);
+        console.log("Global variable: " + name);
+    }
 }
+
+function thisTest() {
+    console.log("The name is global: " + name);
+}
+
+thisTestFun(); //invalid
+
+jsonObj.thisTestFun(); //invalid
 
 thisTest();
 

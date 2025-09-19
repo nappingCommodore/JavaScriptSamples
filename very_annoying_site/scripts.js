@@ -50,6 +50,7 @@ function fillValue() {
 }
 
 function updateValue() {
+    console.log("onCHANGE get called");
     var input = document.getElementById("input1");
     sessionStorage.setItem("inputValue", input.value);
 }
