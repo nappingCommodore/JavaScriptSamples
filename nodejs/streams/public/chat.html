@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Socket.IO Chat Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1rem; }
+    #messages { border: 1px solid #ccc; height: 300px; overflow:auto; padding: 0.5rem; }
+    #form { margin-top: .5rem; }
+  </style>
+</head>
+<body>
+  <h1>Socket.IO Chat Demo</h1>
+  <div id="messages"></div>
+  <form id="form">
+    <input id="input" autocomplete="off" placeholder="Type a message" />
+    <button>Send</button>
+  </form>
+
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+    const messages = document.getElementById('messages');
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+
+    function add(msg){
+      const el = document.createElement('div');
+      el.textContent = msg;
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    socket.on('connect', () => add('Connected: ' + socket.id));
+    socket.on('disconnect', () => add('Disconnected'));
+
+    socket.on('chat message', (m) => {
+      const text = `[${new Date(m.time).toLocaleTimeString()}] ${m.id}: ${m.text}`;
+      add(text);
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!input.value) return;
+      socket.emit('chat message', input.value);
+      input.value = '';
+    });
+  </script>
+</body>
+</html>
